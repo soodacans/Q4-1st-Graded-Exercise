@@ -47,12 +47,17 @@ Name and gender fields are required.
 
 Output the Happy Birthday song as demonstrated above and at the end include the song Good Fellow using the correct pronoun determined by the selected Gender. See sample screen shots below.
 
-Note: Most of the HTML, CSS and JS codes are given already, **the focus is on generating the songs**
+Note: Most of the HTML, CSS and JS code to create dynamic textboxes to get guests name, **the focus is on generating the songs**
 
 **New things to learn:** The use of form and the use w3.css framework (https://www.w3schools.com/w3css/) an alternative to bootstrap
 
 **example screenshots**
+**index.hbs - when website is loaded or when home is clicked**
 ![qownnotes-media-fRFSMD](images/form1.png)
+![qownnotes-media-fRFSMD](images/form1_b.png)
+
+**happy.hbs - when submit button or happy link had been clicked**
+**this is a partial output only**
 ![qownnotes-media-fRFSMD](images/form2.png)
 ![qownnotes-media-fRFSMD](images/form3.png)
 
@@ -63,20 +68,32 @@ Note: Most of the HTML, CSS and JS codes are given already, **the focus is on ge
 3. Modify the names to contain your own.
 4. Modify the copyright footer also to contain your name.
 5. Modify the meta tags content.
-6. Code your javascript solution in **script.js** to show the needed output as described above.
-7. Make users entered the required data (name of celebrant, gender, names of guests).  Show message if it can not proceed for no entries.
-8. Place your own comments on the code you had added.
-9. Submit the link of this replit repository through KHub only.  **I will not check if submitted only in the replit teams.**
+6. Make users entered the required data (name of celebrant, gender, names of guests).  Show message if it can not proceed for no entries.
+7. Place your own comments on the code you had added.
+8. Validate users' input all are required.
+9. Create a route heading for happy.hbs (one for get method due to a link to it and one for post due to form method)
+10. happy.hbs should display the output as shown below and as described above.
+11. Format happy.hbs anyway you want it.
+10. Submit the link of this replit repository through KHub only.  **I will not check if submitted only in the replit teams.**
    
 
-## Q1 Grading: 20/20
- - 50% javascript program
- - 30% user interface
- - 20% overall organization
-
+## Q1 Grading: 30/30
+ - 60% javascript program to display the happy birthday (18pts)
+   - defined route heading and reading of posted data
+   - display of inputs in happy.hbs
+   - the happy birthday song
+   - the jolly good fello with correct gender.
+ - 30% user interface (9pts)
+   - changed of the look of the UI (for both home(inde.hbs) and Happy (happy.hbs)
+   - all names had been changed to yours
+   - inclusion of favicon
+ - 10% overall organization (3pts)
+   - code readability
+   - comments on the JS code
+   - proper content on the meta tags
 
 ## Due Date
-3rd Qtr 2nd Week.
+week 3.
 
 ---
 
