@@ -35,9 +35,11 @@
 
   <section class="w3-container" id="input"> 
     <h2>Output</h2>
-    <!-- Place your output here -->
+    <pre>{{guestList}}</pre>
+    {{#each song}}
+      <p>{{this}}</p>
+    {{/each}}
   </section>
-
   <footer class="w3-container ">
     <p> &copy; 2024 CS3 Teachers </p>
   </footer>
