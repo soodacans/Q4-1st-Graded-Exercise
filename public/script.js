@@ -14,17 +14,50 @@ function solve(){
     let gender = formData.get('gender');
 
   
-    /* Use the songs below needed in this exercise:
-    
-    the Good Fellow replacing blanks with either he's or she's
-    
-    For ______ a jolly good fellow. For _______ a jolly good fellow. For ________ a jolly good fellow, which nobody can deny!
+app.get("/happy", (req, res) => {
+  res.render("happy");
+});
+app.post("/happy", (req, res) => {
+  const numGuests = req.body.number;
+  const gender = req.body.gender;
+  const bdayName = req.body.name;
 
-    The Happy Birthday, replacing the blank with the name of the celebrant
-
-  Happy birthday to you. Happy birthday to you. Happy birthday dear ________. Happy birthday to you!`.split(' ');
+  let guests = [];
+  let attend = []; 
+  
+  for (let i = 1; i <= numGuests; i++) {
+    const guestName = req.body[`name${i}`];
+    if (guestName) {
+      guests.push(guestName);
+      if (req.body[`checkbox${i}`] === "on") {
+        attend.push(guestName);
+      }}}
+  
+  let guestList = `Celebrant: ${bdayName}\n Gender: ${gender}\n \nInvited Guests:\n`;
+  guests.forEach((guest) => {
+    guestList += ` ${guest}: ${attend.includes(guest) ? "Attended" : "Did Not Attend"} \n `;
+  });
+  const prn = gender === "male" ? "he's" : "she's";
+  const goodFellow = `For ${prn} a jolly good fellow. For ${prn} a jolly good fellow. For ${prn} a jolly good fellow, which nobody can deny!`;
  
-    */
+  const happyBday = `Happy birthday to you. Happy birthday to you. Happy birthday dear ${bdayName}. Happy birthday to you!`.split(' ');
+
+  let song = [];
+
+  if (attend.length > 0) {
+    const words = Math.ceil(attend.length/happyBday.length)*happyBday.length;
+    for (let i=0; i<words; i++) {
+      song.push(`${attend[i%attend.length]}: ${happyBday[i%happyBday.length]}`);
+    } 
+    let lastSinger = (words - 1)%attend.length;
+    let nextSinger = (lastSinger+1)%attend.length;
+    song.push(`${attend[nextSinger]}: ${goodFellow}`);
+  } else {
+    song.push(`Everyone: ${happyBday.join(' ')}`);
+    song.push(`Everyone: ${goodFellow}`);
+  }
+  res.render("happy", { guestList, song });
+});
 
 
   
