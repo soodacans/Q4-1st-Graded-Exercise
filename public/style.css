@@ -9,9 +9,9 @@ html {
 
 
 body {
-  font-family: arial, san-serif;
-  background-color: cornsilk;
-  color: royalblue
+  font-family: verdana, san-serif;
+  background-color: #fffcf0;
+  color: #258cad
 }
 
 h1,
@@ -31,17 +31,17 @@ td {
 
 
 #header {
-  border: 1px solid royalblue;
+  border: 1px solid #258cad;
   padding: 20px;
 }
 
 #input {
-  border: 1px solid royalblue;
+  border: 1px solid #258cad;
   padding: 20px;
 }
 
 #output {
-  border: 1px solid royalblue;
+  border: 1px solid #258cad;
   padding: 20px;
   overflow: scroll;
   background-color: black;
